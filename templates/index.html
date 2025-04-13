@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Universal Product Scraper</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        input[type="text"] { width: 70%; padding: 8px; }
+        button { padding: 8px 16px; }
+        .result { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Universal Product Scraper</h1>
+    <form method="POST">
+        <label>Enter Product URL:</label><br>
+        <input type="text" name="url" placeholder="https://example.com/product/..." required>
+        <button type="submit">Get Details</button>
+    </form>
+
+    {% if title %}
+    <div class="result">
+        <h2>Scraped Product Info:</h2>
+        <p><strong>Title:</strong> {{ title }}</p>
+        <p><strong>Price:</strong> {{ price }}</p>
+        <p><strong>Weight:</strong> {{ weight }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
